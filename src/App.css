@@ -1,0 +1,341 @@
+.App {
+  min-height: 100vh; /* Asegura que el contenido mínimo ocupe al menos la altura de la ventana */
+  box-sizing: border-box; /* Incluye el relleno y el borde en el tamaño total */
+}
+
+.App-logo {
+  height: 45vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 40s linear;
+  }
+}
+
+.App-header {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(30, 32, 38, 1) 0%,
+    rgba(19, 21, 26, 1) 30%,
+    rgba(12, 13, 16, 1) 70%,
+    rgba(8, 9, 11, 1) 100%
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(255, 255, 255);
+}
+
+/* ... (código anterior) */
+
+/* Añade reglas para la animación de entrada */
+.App-entrada {
+  opacity: 1;
+}
+
+/* Agrega estilos para el fondo de inicio */
+.App-fondo-negro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Asegura que esté por encima de otros elementos */
+}
+
+.boton-inicio {
+  padding: 20px;
+  background: linear-gradient(to right, #001F3F, #000428);
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive; /* Cambia la fuente a algo más divertido */
+  font-size: 18px;
+  border-radius: 20px;
+  transition: background 0.3s ease; /* Agrega transición al cambio de color de fondo */
+}
+
+.boton-inicio:hover {
+  background: linear-gradient(to right, #2e08b8, #000428);
+}
+
+/* ... (código anterior) */
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.boton {
+  padding: 10px;
+  background: linear-gradient(to right, #001F3F, #000428);
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive; /* Cambia la fuente a algo más divertido */
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: background 0.3s ease; /* Agrega transición al cambio de color de fondo */
+}
+
+.boton:hover {
+  background: linear-gradient(to right, #2e08b8, #000428);
+}
+
+.boton .destello {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.5) 80%);
+  opacity: 0;
+  pointer-events: none;
+  animation: destello-animacion 0.5s ease-out;
+  border-radius: 20px;
+}
+
+@keyframes destello-animacion {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+.boton:hover {
+  background: linear-gradient(to right, #2e08b8, #000428);
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.estrella {
+  animation: pop 0.5s ease-out;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@keyframes brillo {
+  to {
+    box-shadow: none; /* Eliminar el brillo */
+  }
+}
+
+@keyframes brilloPulsante {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: scale(1);
+  }
+}
+
+
+@keyframes brilloEpico {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+    transform: scale(1.2);
+    filter: hue-rotate(20deg);
+  }
+  40% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
+    transform: scale(1.4);
+    filter: hue-rotate(40deg);
+  }
+  60% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+    transform: scale(1.2);
+    filter: hue-rotate(60deg);
+  }
+  80% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: scale(1);
+    filter: hue-rotate(80deg);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+}
+
+
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.App-header {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(255, 255, 255);
+  padding: 0;
+  margin: 0;
+}
+
+.App-header p {
+  font-family: 'TuFuenteGenial'; /* Cambia 'TuFuenteGenial' por la fuente que prefieras */
+  font-size: 24px; /* Ajusta el tamaño según tus preferencias */
+  color: #8A2BE2; /* Un violeta oscuro, puedes cambiarlo según tus gustos */
+  margin-bottom: 45px;
+  padding: 10px; /* Espacio interno para resaltar */
+  text-shadow: 2px 2px 4px #000000; /* Sombra para destacar el texto */
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 102%;
+}
+
+
+.titulo-container {
+  text-align: center;
+  margin-bottom: 20x; /* O ajusta según sea necesario */
+}
+
+.App-fondo-negro {
+  text-align: center; /* Centra el contenido horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ajusta la altura para centrar verticalmente */
+}
+
+.titulo-juego {
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 80px;
+  color: #51238e;
+  margin-bottom: 0;
+}
+
+.titulo-juego-especial {
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 80px;
+  text-shadow: 2px 2px 4px #ffffff;
+  border: 2px solid #ae00ff;
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-block;
+  margin-bottom: 450px;
+}
+
+.boton-inicio {
+  padding: 20px;
+  background: linear-gradient(to right, #001F3F, #000428);
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 18px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+  margin-top: -400px; /* Agrega margen superior para separar del título */
+}
+
+.boton-inicio:hover {
+  background: linear-gradient(to right, #2e08b8, #000428);
+}
+
+
+/* Resto de tus estilos ... */
+
+.App-header p {
+  font-family: 'Comic Sans MS', sans-serif;
+  font-size: 24px;
+  color: #8A2BE2;
+  margin-bottom: 45px;
+  padding: 10px;
+  text-shadow: 2px 2px 10px #8a8a8a;
+}
+
+
+.container {
+  position: relative;
+}
+
+.instructions-icon {
+  position: absolute;
+  top: 124px;
+  right: 630px;
+  cursor: pointer;
+  z-index: 999; /* Ajusta según sea necesario */
+}
+
+.instructions-icon span {
+  font-size: 24px;
+  color: #ffffff; /* Cambia a un color llamativo para pruebas */
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  top: -30px; /* Ajusta según sea necesario */
+  left: 25px; /* Ajusta según sea necesario */
+}
+
+.instructions-icon:hover .tooltip {
+  display: block;
+}
